@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+</head>
+<body>
+    <div class="outer-outer-div">
+    <div class="outer-div">
+    <div class="inner-div">
+    <h1>📰Shop Bill📩</h1>
+    <hr>
+    <h3>Customer Name:{{orders.customer}}</h3>
+    <hr>
+    <table class="table-bill">
+        <h4>Bill no: {{orders.id}}</h4>
+        <tr>
+            <th>Sr.No</th>
+            <th>Product</th>
+            <th>Date&Time</th>
+            <th>Status</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+            <td>1)</td>
+		    <td>{{orders.product}}</td>
+			<td>{{orders.date_created}}</td>
+			<td>{{orders.status}}</td>
+            <td>{{orders.product.price}}</td>
+            
+        </tr>
+        
+    
+        
+    </table>
+    <h2> GST:00</h2>
+    <h2> Other taxes:00</h2>
+    <h2> Total Cost:{{orders.product.price}}</h2>
+    <hr>
+    <h1>Thank You! Visit Again 😊</h1>
+    <h4>🔶 🔷 🔶 🔷 🔶 🔷 🔶 🔶 🔷 🔶 🔷 🔶 🔷 🔶 </h4>
+  </div>
+</div>
+</div>
+</body>
+</html>
+<style>
+    .outer-div{
+        border: 2px solid black;
+        height: 600px;
+        width: 400px;
+        background-color: blanchedalmond;
+    }
+    
+    .outer-outer-div{
+        display: flex;
+        justify-content: center;
+        
+    }
+    h1{
+        text-align: center;
+    }
+    th, td {
+  border-style: dotted;
+}
+h2{
+    margin-left: 10px;
+}
+h3{
+    margin-left: 10px;
+}
+h4{
+    margin-left:10px
+}
+</style>

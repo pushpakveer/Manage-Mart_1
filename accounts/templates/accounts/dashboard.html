@@ -1,0 +1,60 @@
+{% extends 'accounts/main.html' %}
+
+
+{% block content %}
+
+
+	
+</div>
+
+  <br>
+	<div class="col-md mx-5">
+		<h5>ORDERS:</h5>
+		<div class="card card-body my-2" >
+			<table class="table table-sm">
+				<tr>
+					<th>No</th>
+					<th>Product</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th></th>
+					<th>Delete</th>
+				</tr>
+				{% for order in ord %}
+				<tr>
+					<td>{{order.id}}</td>
+					<td>{{order.product}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+					<td><a type="button" class="btn btn-outline-info" href="{% url 'update_form_' order.id%}">Update</a><td>
+					<td><a type="button" class="btn btn-outline-danger" href="{% url 'delete_order' order.id%}">Delete</a><td>
+		
+				</tr>
+				{% endfor %}
+			
+		
+			</table>
+		</div>
+	</div>
+
+</div>
+
+
+{% if messages %}
+{% for message in messages %}
+    {% if message.tags == 'success'%}
+        <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+    {% elif message.tags == 'info'%}
+        <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
+    {% elif message.tags == 'warning'%}
+        <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});</script>
+    {% elif message.tags == 'error'%}
+        <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+    {% endif %}
+{% endfor %}
+{% endif %}
+
+  
+{% endblock %}
+
