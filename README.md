@@ -5,7 +5,9 @@ A web app where mart/shop owners can keep track of there customers and products 
 
 ## TECH
 Frontend: HTML CSS BOOTSTRAP.
+
 Backend: DJANGO(Python).
+
 Database: Mysql and Inbuilt Sqlite3 too.
 
 
